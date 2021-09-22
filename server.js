@@ -8,8 +8,8 @@ const database = {
     {
       id: '123',
       name: 'Frank',
-      email: 'frank@gmail.com',
-      password: 'abc123',
+      email: 'test',
+      password: 'test',
       entries: 0,
       joined: new Date(),
     },
@@ -41,7 +41,7 @@ app.post('/login', (req, res) => {
     req.body.email === database.users[0].email &&
     req.body.password === database.users[0].password
   ) {
-    res.json('Success');
+    res.json(database.users[0]);
   } else {
     res.status(400).json('Error Logging In');
   }
@@ -60,9 +60,7 @@ app.post('/register', (req, res) => {
     joined: new Date(),
   });
   console.log(database);
-  res.json(
-    database.users[database.users.length - 1].name + ' has been registered'
-  );
+  res.json(database.users[database.users.length - 1]);
 });
 
 // PROFILE
