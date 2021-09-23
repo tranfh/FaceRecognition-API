@@ -29,7 +29,7 @@ app.use(cors());
 
 // HOME
 app.get('/', (req, res) => {
-  res.json(database);
+  res.json('Launching Application...');
 });
 
 // LOGIN
